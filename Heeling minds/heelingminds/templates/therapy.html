@@ -1,0 +1,124 @@
+
+{% load static %}
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heeling Minds</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Poppins:wght@400;500&display=swap"
+  rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+      integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'therapy.css' %}">
+
+<link rel="stylesheet" href="{% static 'media-query.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet">
+<div id="nav">
+  <div class="contained">
+      <div id="logo">
+          <img src="{% static 'images/logo.png'%}" class="mmlogo">
+      </div>
+      <div class="container4">
+          <div id="hamburger"><span></span><span></span><span></span></div>
+          <div id="close"><span></span></div>
+          <div id="menuWrapper">
+              <ul>
+                  
+                  <li>
+                      <a href="{% url 'index'%}" alt="1">Home</a>
+                      
+                  </li>
+                  
+                  <li>
+                      <a href="#aboutus" alt="1">About us</a>
+                      
+                  </li>
+                  <li>
+                    <a href="#testimonials" alt="1">Testimonials</a>
+                   
+                </li>
+                <li>
+                  <a href="https://wa.me/919898989898" alt="1">Contact us</a>
+                  
+              </li>
+          
+                  
+                  <a href="{% url 'therapy'%}">
+                  <button class="book"> Book your session</button></a>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">  
+    <form id="contact" action="{% url 'payment'%}" method="post">
+      {% csrf_token %}
+        <fieldset>
+            <input placeholder="Name" type="text" name="name" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Email Address" type="email" name="email" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Age" type="text" name="age" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Phone number" name="phone" type="text" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+            <select name="gender" id="cars"  >
+              
+              <option value="Male">Male</option>
+              <option value="Male">Female</option>
+              <option value="Male">Others</option>
+              
+              
+            </select>
+          </fieldset>
+          <fieldset>
+            <select name="issue" id="cars"  >
+              
+              <option value="anxiety">Anxiety</option>
+              <option value="depression">Depression</option>
+              <option value="stress">Stress</option>
+              <option value="eating-disorder">Eating-disorder</option>
+              <option value="any other">Any other</option>
+              
+            </select>
+          </fieldset>
+          <fieldset>
+            <textarea name="message" placeholder="Type your message here...." tabindex="5" required></textarea>
+          </fieldset>
+          <fieldset>
+            <a href="{% url 'payment'%}">
+            <button name="submit" type="submit">Submit</button></a>
+          </fieldset>
+         
+        </form>
+  </div>
